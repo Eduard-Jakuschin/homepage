@@ -126,6 +126,11 @@ section{padding-block:clamp(56px,8vw,96px)}
 .project-detail h4{margin:0 0 6px;font:600 .8rem var(--font-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--accent)}
 .project-detail ul{margin:0;padding-left:1.1em;display:grid;gap:4px}
 .project-detail li::marker{color:var(--accent)}
+.project-links{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn-demo{display:inline-flex;align-items:center;font:700 .95rem var(--font-body);background:var(--accent);color:var(--accent-ink);text-decoration:none;padding:9px 16px;border-radius:9px}
+.btn-demo::after{content:" →";white-space:pre}
+.repo-link{border-style:solid;text-decoration:none}
+.repo-link:hover{border-color:var(--accent);color:var(--accent)}
 .repo{display:inline-flex;align-items:center;gap:8px;font:600 .9rem var(--font-mono);color:var(--muted);border:1px dashed var(--line);padding:8px 14px;border-radius:9px;width:fit-content}
 
 .approach{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px}
@@ -243,7 +248,10 @@ footer{padding-block:40px 56px;border-top:1px solid var(--line)}
             <p class="project-meta">WordPress 6.8.3 · PHP 8.3 · JavaScript</p>
             <p data-i18n="p1.desc">Die statisch gepflegte, nicht responsive Agentur-Website habe ich auf WordPress migriert und dafür ein eigenes Plugin entwickelt: Besucher filtern Referenzprojekte nach Typ, Branche und Technologie, und die Ergebnisse aktualisieren sich ohne Seitenreload.</p>
             <div class="endpoint"><b>GET</b> /wp-json/portfolio/v1/projects?typ[]=…&amp;sort=date</div>
-            <span class="repo" data-i18n="repo.soon">Code auf GitHub · folgt in Kürze</span>
+            <div class="project-links">
+              <a class="btn-demo" href="portfolio-filter/" data-i18n="p1.demo">Live-Demo ansehen</a>
+              <a class="repo repo-link" href="https://github.com/Eduard-Jakuschin/homepage/tree/main/portfolio-filter" data-i18n="p1.code">Code auf GitHub</a>
+            </div>
           </div>
           <div class="project-detail">
             <div>
@@ -380,6 +388,7 @@ const T = {
     "p1.title":"Website relaunch with a custom portfolio filter module",
     "p1.desc":"I migrated the agency's static, non-responsive website to WordPress and built a custom plugin for it: visitors filter reference projects by type, industry and technology, and the results update without a page reload.",
     "repo.soon":"Code on GitHub · coming soon",
+    "p1.demo":"View live demo","p1.code":"Code on GitHub",
     "label.impl":"Implementation","label.result":"Result",
     "p1.i1":"Custom post type “Projects” with taxonomies and ACF fields",
     "p1.i2":"REST controller using WP_Query with validated parameters and lean JSON responses",
